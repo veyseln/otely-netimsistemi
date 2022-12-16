@@ -1,0 +1,13 @@
+<h1 style="text-align:center;" mat-dialog-title>Otel Güncelle</h1>
+<div>
+  <mat-form-field >
+    <input  matInput placeholder="{{data.element.hotelCode}}" matInput [(ngModel)]="newHotelCode">
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input matInput placeholder="{{data.element.hotelName}}" matInput [(ngModel)]="newHotelName" >
+      </mat-form-field>
+  <div id="updatesbutton">
+    <button  id="hotelupdatebutton" mat-stroked-button color="primary" (click)="updateHotel()"  mat-button>Güncelle</button>
+    <button id="hotelupdatebuttoncancel" mat-stroked-button color="warn" (click)="updatecancel()"  mat-button>İptal</button>
+</div>

@@ -1,0 +1,11 @@
+#hotelupdatebutton{
+    text-align: center;
+    float: left;
+    }
+    #hotelupdatebuttoncancel{
+      text-align: center;
+      float: right;
+    }
+    #updatesbutton{
+    place-items: center;
+    }
