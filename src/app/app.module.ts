@@ -46,9 +46,10 @@ import { UpdateHotelComponent } from './components/updateHotel/updateHotel.compo
 import { UpdateroomtypeComponent } from './components/updateroomtype/updateroomtype.component';
 import { AddroomtypesComponent } from './components/addroomtypes/addroomtypes.component';
 import { AddagencyComponent } from './components/addagency/addagency.component';
-
-
-
+import { AgencyviewComponent } from './components/agencyview/agencyview.component';
+import { NgChartsModule } from 'ng2-charts';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { UpdateagencyComponent } from './components/updateagency/updateagency.component';
 
 
 
@@ -68,8 +69,9 @@ import { AddagencyComponent } from './components/addagency/addagency.component';
     UpdateHotelComponent,
     UpdateroomtypeComponent,
     AddroomtypesComponent,
-    AddagencyComponent
-
+    AddagencyComponent,
+    AgencyviewComponent,
+UpdateagencyComponent
 
 
    ],
@@ -114,6 +116,9 @@ import { AddagencyComponent } from './components/addagency/addagency.component';
     FormsModule,
     MatTableModule,
     MatDialogModule,
+NgChartsModule,
+NgApexchartsModule
+
 
   ],
 

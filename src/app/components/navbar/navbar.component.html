@@ -19,17 +19,20 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
+      <mat-icon  title="Çıkış Yap" id="exitbuton" (click)="exit();">exit_to_app</mat-icon>
       <p [(ngModel)]="logusername" class="kullanici" name="logusername" ngDefaultControl>{{logusername}} </p>
 
       <button type="button" aria-label="Toggle sidenav" mat-icon-button
         (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <img routerLink="/home  " class="logo" src="../../../assets/images/turtle.png" alt="image">
-      <span class="turtle" style="text-align:center">TURTLE</span>
+      <img routerLink="/home" class="logo" src="../../../assets/images/turtle.png" alt="image">
+      <span class="turtle" routerLink="/home" style="text-align:center">TURTLE</span>
+
     </mat-toolbar>
     <div class="grid-container">
       <ng-content></ng-content>
     </div>
+
   </mat-sidenav-content>
 </mat-sidenav-container>

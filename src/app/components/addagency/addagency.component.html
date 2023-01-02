@@ -1,12 +1,60 @@
-<h1 style="text-align:center;" mat-dialog-title>Otel Ekle</h1>
 <div>
-  <mat-form-field >
-    <input id="acentekod" required=""  matInput placeholder="Acenta Kodu Giriniz" matInput >
-    </mat-form-field><br>
-    <mat-form-field >
-      <input id="acentead" required="" matInput placeholder="Acenta Adı Giriniz" matInput>
-      </mat-form-field>
-  <div id="addedbuttons">
-    <button id="addhotelbutton" mat-stroked-button color="primary"  mat-button>Eklea</button>
-    <button id="cancelhotelbutton" mat-stroked-button color="warn"  mat-button>İptal</button>
+<h1 style="text-align: center" mat-dialog-title>Acente Ekle</h1>
+<div style="display: flex;">
+
+      <ul style="float: left;">
+        <li><mat-form-field  class="inputs">
+          <input required="" matInput placeholder="Acenta Kodu Giriniz" matInput  [(ngModel)]="rgagencycode" />
+        </mat-form-field></li>
+        <li><mat-form-field  class="inputs">
+          <input required="" matInput placeholder="Acente Adı Giriniz" [(ngModel)]="rgagencyname" matInput />
+        </mat-form-field></li>
+        <li> <mat-form-field  class="inputs">
+          <input required="" matInput placeholder="Adres Giriniz" [(ngModel)]="rgagencyaddress" matInput />
+        </mat-form-field>
+      </li>
+      </ul>
+
+      <ul>
+        <li><mat-form-field  class="inputs">
+          <input required="" matInput placeholder="Telefon Giriniz" [(ngModel)]="rgagencytel" matInput />
+        </mat-form-field></li>
+        <li><mat-form-field  class="inputs">
+          <input required="" matInput placeholder="Email Giriniz" [(ngModel)]="rgagencymail" matInput />
+        </mat-form-field></li>
+        <br>
+        <li>
+          <input  type="file" (change)="onFileChanged($event)">
+
+
+        </li>
+      </ul>
+
+  </div>
+  <br>
+  <div style="align-items: center;">
+
+    <button
+    (click)="addagency();"
+      id="addagencybutton"
+      class=""
+      mat-stroked-button
+      color="primary"
+      mat-button
+    >
+      Ekle
+    </button>
+    <button
+      id="cancelagencybutton"
+      class=""
+      mat-stroked-button
+      color="warn"
+      mat-button
+      (click)="cancel();"
+    >
+      İptal
+    </button>
+  </div>
 </div>
+
+

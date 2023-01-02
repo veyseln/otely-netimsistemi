@@ -1,5 +1,5 @@
 export class AddAgencyRequest {
-  id?: number
+  id: number
   code!:string
   name!:string
   address!:string

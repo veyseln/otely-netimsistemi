@@ -51,6 +51,7 @@ data:any;
 
 
    register(){
+
     this.addContactRequest.Username = this.rgusername;
     this.addContactRequest.Password = this.rgpassword;
     for(;this.s<this.users.length;this.s++){
@@ -89,7 +90,7 @@ login(){
       this._snackBar.open("Giriş Başarılı")
       localStorage.setItem(this.token,"token");
       this.route.navigate(["home"])
-      debugger
+
       localStorage.setItem(this.loguser,this.username);
 
       break;

@@ -26,16 +26,25 @@
 
   width: 130px;
   align-items: center;
+  cursor: pointer;
 }
 .kullanici{
   position: absolute;
-  right: 20px;
+  right: 55px;
   opacity: 0.4;
   font-size: 12px;
+  bottom: 3px;
 }
 .turtle{
-
+cursor: pointer;
 }
 .table{
   width : 100%;
+}
+#exitbuton{
+  position: absolute;
+  float: right;
+  right: 20px;
+  font-size: 25px;
+cursor: pointer;
 }

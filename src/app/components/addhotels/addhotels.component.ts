@@ -5,9 +5,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { timer } from 'rxjs';
 import { Hotel } from 'src/app/interfaces/Hotel';
+import { RoomType } from 'src/app/interfaces/RoomType';
 import { AddHotelRequest } from 'src/app/models/AddHotelRequest';
 import { HotelComponent } from 'src/app/Pages/hotel/hotel.component';
 import { HotelsService } from 'src/app/services/Hotel.service';
+import { RoomtypeService } from 'src/app/services/roomtype.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,6 +19,8 @@ import Swal from 'sweetalert2';
 })
 export class AddhotelsComponent implements OnInit {
   HoteldataSource = new MatTableDataSource<Hotel>();
+  RoomtypeData: any;
+  types: RoomType[] = [];
   addHotelRequest:AddHotelRequest = new AddHotelRequest;
   rghotelcode:string="";
   rghotelname:string="";
@@ -31,11 +35,16 @@ export class AddhotelsComponent implements OnInit {
 
   constructor(private hotelService:HotelsService,
     private _snackBar: MatSnackBar,
+    private typesData: RoomtypeService,
     public dialogRef: MatDialogRef<HotelComponent>,
     private hotelData: HotelsService,) {
       this.hotelData.gethotel().subscribe((response) => {
         this.HotelData = response;
    });
+   this.typesData.getroomtype().subscribe((response) => {
+      this.RoomtypeData = response;
+      console.log(this.RoomtypeData);
+    });
   }
 
 

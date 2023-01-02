@@ -11,12 +11,12 @@
             <form class="login form">
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Kullanıcı Adı</mat-label>
-                <input type="email" matInput placeholder="Type your email" [(ngModel)]="username" name="username" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                <input (keydown.enter)="login()" type="email" matInput placeholder="Type your email" [(ngModel)]="username" name="username" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
               </mat-form-field>
               <br />
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Şifre</mat-label>
-                <input type="password" id="psw" matInput placeholder="Type your password" [(ngModel)]="password" name="password" required>
+                <input (keydown.enter)="login()" type="password" id="psw" matInput placeholder="Type your password" [(ngModel)]="password" name="password" required>
               </mat-form-field>
               <br />
             </form>
@@ -40,7 +40,7 @@
             </mat-form-field>
           </form> </mat-card-content>
           <mat-card-actions>
-            <button (click)="register()" mat-flat-button color="primary" >Save</button>
+            <button  (click)="register()" [disabled] = "!rgusername ||!rgpassword" mat-flat-button color="primary" >Save</button>
 
         </mat-card-actions>
         </mat-card></mat-tab>

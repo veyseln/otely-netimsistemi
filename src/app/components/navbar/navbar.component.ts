@@ -8,6 +8,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 
 import { AsyncPipe } from '@angular/common';
 import { map, Observable, shareReplay } from 'rxjs';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -27,7 +28,7 @@ constructor(
 
 }
   ngOnInit(){
-    debugger
+
 
     this.logusername=localStorage.getItem('Loguser');
 
@@ -66,7 +67,22 @@ hostel(){
     this.title="Oda Tipi";
   this.route.navigate(["roomtype"])
   }
+  exit(){
+    Swal.fire({
+      title: 'Emin misin?',
+      text:"Çıkış Yapmak İstiyor musun?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText:'Hayır',
+      confirmButtonText: 'Evet'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.logusername=localStorage.clear();
+        window.location.reload();
+  }
+})
 }
 
-
-
+}

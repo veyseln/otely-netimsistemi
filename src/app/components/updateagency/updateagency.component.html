@@ -1,3 +1,60 @@
-<p>
-  updateagency works!
-</p>
+<div>
+  <h1 style="text-align: center" mat-dialog-title>Acente Güncelle </h1>
+  <div style="display: flex;">
+
+        <ul style="float: left;">
+          <li><mat-form-field  class="inputs">
+            <input required="" matInput placeholder="{{data.element.code}}" matInput [(ngModel)]="newCode">
+          </mat-form-field></li>
+          <li><mat-form-field  class="inputs">
+            <input required="" matInput placeholder="{{data.element.name}}" matInput [(ngModel)]="newName"  />
+          </mat-form-field></li>
+          <li> <mat-form-field  class="inputs">
+            <input required="" matInput placeholder="{{data.element.address}}" matInput [(ngModel)]="newAdres"  />
+          </mat-form-field>
+        </li>
+        </ul>
+
+        <ul>
+          <li><mat-form-field  class="inputs">
+            <input required="" matInput placeholder="{{data.element.tel}}" matInput [(ngModel)]="newTel" />
+          </mat-form-field></li>
+          <li><mat-form-field  class="inputs">
+            <input required="" matInput placeholder="{{data.element.email}}" matInput [(ngModel)]="newMail" />
+          </mat-form-field></li>
+          <br>
+          <li>
+            <input  type="file" (change)="onFileChanged($event)">
+
+
+          </li>
+        </ul>
+
+    </div>
+    <br>
+    <div style="align-items: center;">
+
+      <button
+      (click)="updateAgency();"
+        id="addagencybutton"
+        class=""
+        mat-stroked-button
+        color="primary"
+        mat-button
+      >
+        Güncelle
+      </button>
+      <button
+        id="cancelagencybutton"
+        class=""
+        mat-stroked-button
+        color="warn"
+        mat-button
+        (click)="updatecancel();"
+      >
+        İptal
+      </button>
+    </div>
+
+
+

@@ -30,7 +30,7 @@ addHotel(addHotel:Hotel):Observable<any>
   }
   updateHotel(updateHotel:Hotel):Observable<any>
   {
-
+debugger
     return this.http.put(environment.url+"Hotels/Update/0",updateHotel)
   }
 }

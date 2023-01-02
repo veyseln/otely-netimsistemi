@@ -1,46 +1,51 @@
 
   <app-navbar>
+
     <br>
         <div >
-          <h1 id="baslik" >Acenta</h1>
+          <h1 id="baslik" >Acente</h1>
           <br>
-          <button (click)="addAgency();" id="added-button" mat-raised-button >Acenta Ekle
+          <button (click)="addAgency();" id="added-button" mat-raised-button >Acente Ekle
           </button>
         </div>
         <br>
         <br>
         <br>
-    <div id="tables" class="mat-elevation-z8 " >
 
-      <table id="table" mat-table [dataSource]="AgencyData" >
+    <div  id="tables" class="mat-elevation-z8 ">
+      <table style="overflow-x:auto" id="table" mat-table [dataSource]="AgencyData">
         <ng-container matColumnDef="id">
-         <th mat-header-cell *matHeaderCellDef> Id </th>
 
-          <td mat-cell *matCellDef="let element"> {{element.id}}  </td>
+         <th mat-header-cell *matHeaderCellDef > Id </th>
+          <td style="cursor: pointer;" mat-cell *matCellDef="let element"(click)="cellClicked(element)" > {{element.id}}  </td>
         </ng-container>
-        <ng-container matColumnDef="Code">
+        <ng-container matColumnDef="Logo">
+          <th mat-header-cell *matHeaderCellDef> Logo </th>
+          <td style="cursor: pointer;" (click)="cellClicked(element)" mat-cell *matCellDef="let element"  >
+            <img src="../../../assets/images/logo.png" width="40" height="25"/>
+
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Kod">
           <th mat-header-cell *matHeaderCellDef> Acente Kodu </th>
-          <td mat-cell *matCellDef="let element" > {{element.code}}</td>
+          <td  style="cursor: pointer;" (click)="cellClicked(element)" mat-cell *matCellDef="let element" > {{element.code}}</td>
         </ng-container>
-        <ng-container matColumnDef="Name">
+        <ng-container matColumnDef="İsim">
             <th mat-header-cell *matHeaderCellDef> Adı </th>
-            <td mat-cell *matCellDef="let element" > {{element.name}}</td>
+            <td  style="cursor: pointer;" (click)="cellClicked(element)" mat-cell *matCellDef="let element"> {{element.name}}</td>
           </ng-container>
-          <ng-container matColumnDef="Address">
-            <th mat-header-cell *matHeaderCellDef> Adı </th>
-            <td mat-cell *matCellDef="let element" > {{element.address}}</td>
+          <ng-container   matColumnDef="Adres" >
+            <th mat-header-cell *matHeaderCellDef > Adresi </th>
+            <td (click)="cellClicked(element)" style="cursor: pointer;white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:120px;" mat-cell *matCellDef="let element" class="truncate-cell" >{{element.address}} </td>
           </ng-container>
-          <ng-container matColumnDef="Logo">
-            <th mat-header-cell *matHeaderCellDef> Logo </th>
-            <td mat-cell *matCellDef="let element" > {{element.logo}}</td>
-          </ng-container>
-          <ng-container matColumnDef="Tel">
-            <th mat-header-cell *matHeaderCellDef> Telefon </th>
-            <td mat-cell *matCellDef="let element" > {{element.tel}}</td>
+
+          <ng-container matColumnDef="Telefon" hidden>
+            <th mat-header-cell hidden *matHeaderCellDef>Telefon </th>
+            <td  style="cursor: pointer;" hidden (click)="cellClicked(element)"  mat-cell *matCellDef="let element" > {{element.tel}}</td>
           </ng-container>
           <ng-container matColumnDef="Email">
             <th mat-header-cell *matHeaderCellDef> Email </th>
-            <td mat-cell *matCellDef="let element" > {{element.email}}</td>
+            <td  style="cursor: pointer;" (click)="cellClicked(element)" mat-cell *matCellDef="let element" > {{element.email}}</td>
           </ng-container>
         <ng-container matColumnDef="updateico">
           <th mat-header-cell *matHeaderCellDef> </th>
