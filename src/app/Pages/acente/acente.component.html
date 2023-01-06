@@ -22,7 +22,7 @@
         <ng-container matColumnDef="Logo">
           <th mat-header-cell *matHeaderCellDef> Logo </th>
           <td style="cursor: pointer;" (click)="cellClicked(element)" mat-cell *matCellDef="let element"  >
-            <img src="../../../assets/images/logo.png" width="40" height="25"/>
+            <img src="../../../assets/images/logo2.jpg" width="40" height="25"/>
 
             </td>
         </ng-container>
@@ -62,9 +62,6 @@
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-
-
 
       </table>
       <mat-paginator [pageSizeOptions]="[10, 20]"
